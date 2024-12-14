@@ -35,4 +35,15 @@ public class ArrayLeetCode {
         }
         return j;
     }
+
+    //    Leetcode 26 - Remove a particular element
+    private static int removeValue(int[] nums, int value) {
+        int j = 0;
+        for (int i : nums) {
+            if (i != value) {
+                nums[j++] = i;
+            }
+        }
+        return j;
+    }
 }
