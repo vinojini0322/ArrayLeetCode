@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class ArrayLeetCode {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(twoSum(new int[]{3, 2, 4}, 6)));
+        System.out.println(Arrays.toString(getConcatenation(new int[]{3, 2, 4})));
     }
 //    Leetcode 01 - Two sum
 
@@ -95,5 +96,14 @@ public class ArrayLeetCode {
             concatArr[i + nums.length] = nums[i];
         }
         return concatArr;
+    }
+
+    //      Leetcode - 1920 - Build Array from Permutation
+    private static int[] buildArray(int[] nums) {
+        int[] ans= new int [nums.length];
+        for(int i=0;i<nums.length;i++){
+            ans[i]=nums[nums[i]];
+        }
+        return ans;
     }
 }
