@@ -63,4 +63,37 @@ public class ArrayLeetCode {
         }
         return start;
     }
+
+    //    Leetcode 66 - Plus One
+    private static int[] plusOne(int[] digits) {
+        return null;
+    }
+
+    //    Leetcode 88 - Merge Sorted Array
+//    private static int[] merge(int[] nums1, int m, int[] nums2, int n) {
+//        int a = 0;
+//        for (int i = 0; i < nums1.length; i++) {
+//            if (nums1[i] < nums2[i]) {
+//                nums1[a++] = nums1[i];
+//            } else if (nums1[i] > nums2[i]) {
+//                int target = nums1[i];
+//                nums1[a++] = nums2[i];
+//                nums2[i] = target;
+//            } else {
+//                nums1[a] = nums1[i];
+//            }
+//        }
+//        return nums1;
+//    }
+
+
+    //    Leetcode - 1929 - Concatenation of Array
+    private static int[] getConcatenation(int[] nums) {
+        int[] concatArr = new int[2 * nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            concatArr[i] = nums[i];
+            concatArr[i + nums.length] = nums[i];
+        }
+        return concatArr;
+    }
 }
