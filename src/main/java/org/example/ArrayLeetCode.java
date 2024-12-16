@@ -117,4 +117,16 @@ public class ArrayLeetCode {
         return s.contentEquals(concatenated);
     }
 
+    //      Leetcode - 1051 -  Height Checker
+    private static int heightChecker(int[] heights) {
+        int[] sorted = heights.clone();
+        Arrays.sort(sorted);
+        int a = 0;
+        for (int i = 0; i < heights.length; i++) {
+            if (heights[i] != sorted[i]) {
+                a++;
+            }
+        }
+        return a;
+    }
 }
