@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayLeetCode {
     public static void main(String[] args) {
@@ -100,10 +101,20 @@ public class ArrayLeetCode {
 
     //      Leetcode - 1920 - Build Array from Permutation
     private static int[] buildArray(int[] nums) {
-        int[] ans= new int [nums.length];
-        for(int i=0;i<nums.length;i++){
-            ans[i]=nums[nums[i]];
+        int[] ans = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            ans[i] = nums[nums[i]];
         }
         return ans;
     }
+    //      Leetcode - 2828 - Check if a String Is an Acronym of Words
+
+    private static boolean isAcronym(List<String> words, String s) {
+        StringBuilder concatenated = new StringBuilder();
+        for (String a : words) {
+            concatenated.append(a.charAt(0));
+        }
+        return s.contentEquals(concatenated);
+    }
+
 }
