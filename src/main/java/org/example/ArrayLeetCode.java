@@ -6,7 +6,7 @@ import java.util.List;
 public class ArrayLeetCode {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(twoSum(new int[]{3, 2, 4}, 6)));
-        System.out.println(Arrays.toString(getConcatenation(new int[]{3, 2, 4})));
+        System.out.println(Arrays.toString(getFinalState(new int[]{2,1,3,5,6},5,2)));
     }
 //    Leetcode 01 - Two sum
 
@@ -129,4 +129,24 @@ public class ArrayLeetCode {
         }
         return a;
     }
+
+    //      Leetcode - 3264 -  Final Array State After K Multiplication Operations I
+
+    private static int[] getFinalState(int[] nums, int k, int multiplier) {
+//        int a = Integer.MAX_VALUE;
+        int index = 0;
+        for (int j = k; j > 0; j--) {
+            int a = Integer.MAX_VALUE;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] < a) {
+                    a = nums[i];
+                    index = i;
+                }
+            }
+            nums[index] = nums[index] * multiplier;
+
+        }
+        return nums;
+    }
+
 }
