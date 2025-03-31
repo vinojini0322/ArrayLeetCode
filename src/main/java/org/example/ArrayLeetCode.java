@@ -1,12 +1,14 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ArrayLeetCode {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(twoSum(new int[]{3, 2, 4}, 6)));
-        System.out.println(Arrays.toString(getFinalState(new int[]{2,1,3,5,6},5,2)));
+        System.out.println(Arrays.toString(getFinalState(new int[]{2, 1, 3, 5, 6}, 5, 2)));
     }
 //    Leetcode 01 - Two sum
 
@@ -26,8 +28,22 @@ public class ArrayLeetCode {
         return new int[]{-1, -1};
     }
 
+    private static int[] twoSumOptimised(int[] arr, int target) {
+        Map<Integer, Integer> mm = new HashMap<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            if (mm.containsKey(target - arr[i])) {
+                return new int[]{i, mm.get(target - arr[i])};
+            } else {
+                mm.put(arr[i], i);
+            }
+        }
+        return new int[]{-1, -1};
+    }
+
+
     //    Leetcode 26 - Remove Duplicates from Sorted Array
-    //    This method returns the no of unique elements oin the array
+    //    This method returns the no of unique elements in the array
     private static int removeDuplicates(int[] nums) {
         int j = 1;
         for (int i = 1; i < nums.length; i++) {
